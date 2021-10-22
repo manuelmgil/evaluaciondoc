@@ -1,0 +1,23 @@
+{
+  "name": "evaluaciondoc",
+  "version": "1.0.0",
+  "description": "You can use the [editor on GitHub](https://github.com/manuelmgil/evaluaciondoc/edit/main/README.md) to maintain and preview the content for your website in Markdown files.",
+  "main": "index.js",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuelmgil/evaluaciondoc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manuelmgil/evaluaciondoc/issues"
+  },
+  "homepage": "https://github.com/manuelmgil/evaluaciondoc#readme"
+}

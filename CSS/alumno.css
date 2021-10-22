@@ -71,6 +71,7 @@ div.infoperiodo{
 
 .contenedor{
     padding: 4px 10px;
+    
 }
 .textosuave{
     font-size: 1.3em;
@@ -78,7 +79,27 @@ div.infoperiodo{
     color: #7E7878;
     font-style: italic;
 }
-
+.textodatos{
+    padding: 0px 25px;
+    font-size: 1.6em;
+    font-weight: 300;
+    color: #4d4747;
+    font-style: italic;
+}
+.textocarrera{
+    padding: 0px 25px;
+    font-size: 1.0m;
+    font-weight: 300;
+    color: #7E7878;
+    font-style: italic;
+}
+.textomateria{
+    padding: 0px 25px;
+    font-size: 1.0em;
+    font-weight: 300;
+    color: #7E7878;
+    font-style: italic;
+}
 /* tarjetas */
 .grid{
     display: grid;

@@ -15,83 +15,84 @@
 <body>
     <nav>
         <a href="administrador.php"><img src="img/logo.jpg" alt="logo">
-            </a>
-            <p class="uninombre">Universidad Politécnica de Quintana Roo</p>
-            <div class="pushnav">
-                <p>
-                    <!-- Nombre en consulta-->Administrador
-                </p>
-                <a href="#">
-                    <p class="sesionnav">Salir</p>
-                </a>
-            </div>
-        </nav>
-        <!-- Info del periodo -->
-        <div class="infoperiodo">
-            <p>Sistema de Evaluación Docente</p>
-            <p class="pushperiodo">
-                <!-- Periodo en consulta--> Periodo SEP-DIC
+        </a>
+        <p class="uninombre">Universidad Politécnica de Quintana Roo</p>
+        <div class="pushnav">
+            <p>
+                <!-- Nombre en consulta-->Administrador
             </p>
+            <a href="#">
+                <p class="sesionnav">Salir</p>
+            </a>
         </div>
+    </nav>
+    <!-- Info del periodo -->
+    <div class="infoperiodo">
+        <p>Sistema de Evaluación Docente</p>
+        <p class="pushperiodo">
+            <!-- Periodo en consulta--> Periodo SEP-DIC
+        </p>
+    </div>
     <div class="contenido">
         <div class="datos">
-        <table class="table"> 
+            <table class="table">
                 <thead>
                     <tr>
-                    <th class="textodatos" scope="col">Banco de Preguntas</th>
-                    <th scope="col">
-                        <div class="search-container">
-                        <form action="/action_page.php">
-                        <input type="text" placeholder="Buscar.." name="search">
-                        <button type="button" class="btn btn-success">Buscar</button>
-                        </form>
-                    </div>
-                    </th>
-                    <th scope="col"><button type="button" class="btn btn-primary">Crear Pregunta</button></th>
+                        <th class="textodatos" scope="col">Banco de Preguntas</th>
+                        <th scope="col">
+                            <div class="search-container">
+                                <form action="/action_page.php">
+                                    <input type="text" placeholder="Buscar.." name="search">
+                                    <button type="button" class="btn btn-success">Buscar</button>
+                                </form>
+                            </div>
+                        </th>
+                        <th scope="col"><button type="button" class="btn btn-primary" id="crear">Crear Pregunta</button>
+                        </th>
                     </tr>
                 </thead>
-        </table>
+            </table>
         </div>
         <div class="contenedor">
-            <table class="table"> <!-- Aqui deberia haber un while por lo que el codigo se reduce -->
+            <table class="table">
+                <!-- Aqui deberia haber un while por lo que el codigo se reduce -->
                 <thead>
                     <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Pregunta</th>
-                    <th scope="col">Fecha Creacion</th>
-                    <th scope="col">Fecha modificacion</th>
-                    <th scope="col"></th>
-                    
+                        <th scope="col">ID</th>
+                        <th scope="col">Pregunta</th>
+                        <th scope="col">Fecha Creacion</th>
+                        <th scope="col">Fecha modificacion</th>
+                        <th scope="col"></th>
+
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                    <th scope="row">1</th>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-                    <td>21/10/2021</td>
-                    <td>21/10/2021</td>
-                    <td><button type="button" class="btn btn-danger">Editar</button></td>
+                        <th scope="row">1</th>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        <td>21/10/2021</td>
+                        <td>21/10/2021</td>
+                        <td><button type="button" class="btn btn-danger">Editar</button></td>
                     </tr>
                     <tr>
-                    <th scope="row">2</th>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-                    <td>21/10/2021</td>
-                    <td>21/10/2021</td>
-                    <td><button type="button" class="btn btn-danger">Editar</button></td>
+                        <th scope="row">2</th>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        <td>21/10/2021</td>
+                        <td>21/10/2021</td>
+                        <td><button type="button" class="btn btn-danger">Editar</button></td>
                     </tr>
                     <tr>
-                    <th scope="row">3</th>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-                    <td>21/10/2021</td>
-                    <td>21/10/2021</td>
-                    <td><button type="button" class="btn btn-danger">Editar</button></td>
+                        <th scope="row">3</th>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        <td>21/10/2021</td>
+                        <td>21/10/2021</td>
+                        <td><button type="button" class="btn btn-danger">Editar</button></td>
                     </tr>
                 </tbody>
-            </table>    
+            </table>
         </div>
-    </div>    
-
-
+    </div>
+    <script type="text/javascript" src="./js/script.js"></script>
 </body>
 
 </html>

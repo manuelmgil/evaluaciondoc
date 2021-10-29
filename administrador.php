@@ -30,9 +30,11 @@
         </p>
         <div class="contenedor">
             <div class="eleccion">
-                <div class="eleccionbtn">
-                    <p>Administrar <br> preguntas</p>
-                </div>
+                <a href="./banco.php">
+                    <div class="eleccionbtn">
+                        <p>Administrar <br> preguntas</p>
+                    </div>
+                </a>
                 <br>
                 <p>Crear nuevas preguntas o actualizar preguntas</p>
             </div>

@@ -29,11 +29,12 @@ div.eleccionbtn{
     height: 95px;
     padding: 25px 9px;
     border-radius: 47px;
- margin-right: auto;
- margin-left: auto;
-/* align-self: center; */
+    margin-right: auto;
+    margin-left: auto;
+    /* align-self: center; */
 }
 .eleccionbtn p {
+    text-decoration:none;
     margin-bottom: 0;
 }
 .eleccion > p{
@@ -48,4 +49,9 @@ div.eleccion{
     margin: 0;
     text-align: center;
   
+}
+
+div.eleccion a {
+    text-decoration: none;
+    
 }

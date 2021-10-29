@@ -3,15 +3,21 @@
     font-family: 'Montserrat';
     font-size: 1.8em;
 }
+
+.flex{
+
+display: flex;
+
+}
+
 .contenedor{
     background-color: white;
     width: 95%;
-    height:270px;
     padding: 15px;
     margin: 0 auto;
     border-radius: 37px;
     padding: 35px 30px;
-    display: flex;
+ 
 }
 body{
     background: #E0E7EC;
@@ -19,6 +25,10 @@ body{
 
 div.eleccionbtn{
    margin-bottom: 20px;
+}
+
+table{
+    width: 100%;
 }
 
 .eleccionbtn {
@@ -49,3 +59,18 @@ div.eleccion{
     text-align: center;
   
 }
+
+.fijo{
+display: flex;    
+
+}
+input[type=radio]{
+    margin: 10px 2% 10px 10%;
+}
+
+table{
+    border-collapse: inherit;
+}
+/* tbody, td, tfoot, th, thead, tr{
+    border-style: hidden;
+} */

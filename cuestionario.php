@@ -15,108 +15,105 @@
 <body>
     <nav>
         <a href="administrador.php"><img src="img/logo.jpg" alt="logo">
-            </a>
-            <p class="uninombre">Universidad Politécnica de Quintana Roo</p>
-            <div class="pushnav">
-                <p>
-                    <!-- Nombre en consulta-->Manuel Iván Mukul Gil
-                </p>
-                <a href="#">
-                    <p class="sesionnav">Cerrar Sesión</p>
-                </a>
-            </div>
-        </nav>
-        <!-- Info del periodo -->
-        <div class="infoperiodo">
-            <p>Sistema de Evaluación Docente</p>
-            <p class="pushperiodo">
-                <!-- Periodo en consulta--> Periodo SEP-DIC
+        </a>
+        <p class="uninombre">Universidad Politécnica de Quintana Roo</p>
+        <div class="pushnav">
+            <p>
+                <!-- Nombre en consulta-->Manuel Iván Mukul Gil
             </p>
+            <a href="#">
+                <p class="sesionnav">Cerrar Sesión</p>
+            </a>
         </div>
+    </nav>
+    <!-- Info del periodo -->
+    <div class="infoperiodo">
+        <p>Sistema de Evaluación Docente</p>
+        <p class="pushperiodo">
+            <!-- Periodo en consulta--> Periodo SEP-DIC
+        </p>
+    </div>
     <div class="contenido">
         <div class="datos">
-            <p class="textodatos">  Mariano Xiu | Ingenieria en Software</p>
-            <p class="textomateria">  Algoritmos</p>
+            <p class="textodatos"> Mariano Xiu | Ingenieria en Software</p>
+            <p class="textomateria"> Algoritmos</p>
         </div>
         <div class="contenedor">
-            <table class="table"> <!-- Aqui deberia haber un while por lo que el codigo se reduce -->
-                <thead>
-                    <tr>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <th scope="row">1</th>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-                    <td>
-                          <input type="radio" id="1" name="fav_language" value="1">
-                          <label for="1"></label>
-                          <input type="radio" id="2" name="fav_language" value="2">
-                          <label for="2"></label>
-                          <input type="radio" id="3" name="fav_language" value="3">
-                          <label for="3"></label>
-                          <input type="radio" id="4" name="fav_language" value="4">
-                          <label for="4"></label>
-                          <input type="radio" id="5" name="fav_language" value="5">
-                          <label for="5"></label>
-                    </td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-                    <td>
-                          <input type="radio" id="1" name="fav_language" value="1">
-                          <label for="1"></label>
-                          <input type="radio" id="2" name="fav_language" value="2">
-                          <label for="2"></label>
-                          <input type="radio" id="3" name="fav_language" value="3">
-                          <label for="3"></label>
-                          <input type="radio" id="4" name="fav_language" value="4">
-                          <label for="4"></label>
-                          <input type="radio" id="5" name="fav_language" value="5">
-                          <label for="5"></label>
-                    </td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-                    <td>
-                          <input type="radio" id="1" name="fav_language" value="1">
-                          <label for="1"></label>
-                          <input type="radio" id="2" name="fav_language" value="2">
-                          <label for="2"></label>
-                          <input type="radio" id="3" name="fav_language" value="3">
-                          <label for="3"></label>
-                          <input type="radio" id="4" name="fav_language" value="4">
-                          <label for="4"></label>
-                          <input type="radio" id="5" name="fav_language" value="5">
-                          <label for="5"></label>
-                    </td>
-                    </tr>
-                    <tr>
-                    <th scope="row">4</th>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-                    <td>
-                          <input type="radio" id="1" name="fav_language" value="1">
-                          <label for="1"></label>
-                          <input type="radio" id="2" name="fav_language" value="2">
-                          <label for="2"></label>
-                          <input type="radio" id="3" name="fav_language" value="3">
-                          <label for="3"></label>
-                          <input type="radio" id="4" name="fav_language" value="4">
-                          <label for="4"></label>
-                          <input type="radio" id="5" name="fav_language" value="5">
-                          <label for="5"></label>
-                    </td>
-                    </tr>
-                </tbody>
-            </table>    
+            <div class="">
+                <p class="textomateria">
+                    Responda todas la preguntas de acuerdo a como se sinstió al tomar el curso este cuatrimestre.
+                </p>
+            </div>
+            <div>
+                <table class="table">
+
+                    <!-- Aqui deberia haber un while por lo que el codigo se reduce -->
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width: 5%"></th>
+                            <th scope="col" style="width: 75%"></th>
+                            <th scope="col" style="width: 20%"></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>
+                                <div class="fijo">
+                                    <input type="radio" name="q1" value="1">
+                                    <input type="radio" name="q1" value="3">
+                                    <input type="radio" name="q1" value="4">
+                                    <input type="radio" name="q1" value="5">
+                                    <input type="radio" name="q1" value="2">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>
+                                <div class="fijo">
+                                    <input type="radio" name="q2" value="1">
+                                    <input type="radio" name="q2" value="2">
+                                    <input type="radio" name="q2" value="3">
+                                    <input type="radio" name="q2" value="4">
+                                    <input type="radio" name="q2" value="5">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>
+                                <div class="fijo">
+                                    <input type="radio" name="q3" value="1">
+                                    <input type="radio" name="q3" value="2">
+                                    <input type="radio" name="q3" value="3">
+                                    <input type="radio" name="q3" value="4">
+                                    <input type="radio" name="q3" value="5">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            <td>
+                                <div class="fijo">
+                                    <input type="radio" name="q4" value="1">
+                                    <input type="radio" name="q4" value="2">
+                                    <input type="radio" name="q4" value="3">
+                                    <input type="radio" name="q4" value="4">
+                                    <input type="radio" name="q4" value="5">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>    
+    </div>
 
 
 </body>

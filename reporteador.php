@@ -3,6 +3,7 @@ require('fpdf/fpdf.php');
 
 class PDF extends FPDF
 {
+
 // Cargar los datos PASO 2
 function LoadData($file)
 {
@@ -37,6 +38,20 @@ function Footer()
     $this->SetFont('Arial','I',8);
     // Número de página
     $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+}
+function Datos()
+{
+    //Ejemplos de Variables 
+    $name= "Fernando Araujo Cruz";
+    $carrera= "Ingenieria en Software";
+    $periodo= "2021 A";
+    $this->SetX(25);
+    $this->Cell(0,6,'Nombre:  '.$name,0,1);
+    $this->SetX(25);
+    $this->Cell(0,6,'Carrera:  '.$carrera,0,1);
+    $this->SetX(25);
+    $this->Cell(0,6,'Periodo:  '.$periodo,0,1);
+    $this->Ln(20);
 }
 // Tabla coloreada PASO 2
 function FancyTable($header, $data)
@@ -76,10 +91,7 @@ function FancyTable($header, $data)
 }
 
 }
-//Ejemplos de Variables 
-$name= "Fernando Araujo Cruz";
-$carrera= "Ingenieria en Software";
-$periodo= "2021 A";
+
 // Creación del objeto de la clase heredada
 $pdf = new PDF();
 // Títulos de las columnas
@@ -89,9 +101,7 @@ $data = $pdf->LoadData('paises.txt');
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Arial','',12);
-    $pdf->Cell(0,6,'Nombre:  '.$name,0,1);
-    $pdf->Cell(0,6,'Carrera a Calificar:  '.$carrera,0,1);
-    $pdf->Cell(0,6,'Periodo:  '.$periodo,0,1);
+    $pdf->Datos();
     $pdf->FancyTable($header,$data);
     $pdf->Output();
 ?>

@@ -43,14 +43,17 @@ function Datos()
 {
     //Ejemplos de Variables 
     $name= "Fernando Araujo Cruz";
-    $carrera= "Ingenieria en Software";
     $periodo= "2021 A";
+    $materia= "Programacion Orientada a Objetos";
+    $id_cuestionario= 2;
     $this->SetX(25);
     $this->Cell(0,6,'Nombre:  '.$name,0,1);
     $this->SetX(25);
-    $this->Cell(0,6,'Carrera:  '.$carrera,0,1);
-    $this->SetX(25);
     $this->Cell(0,6,'Periodo:  '.$periodo,0,1);
+    $this->SetX(25);
+    $this->Cell(0,6,'Materia:  '.$materia,0,1);
+    $this->SetX(25);
+    $this->Cell(0,6,'Cuestionario No.:  '.$id_cuestionario,0,1);
     $this->Ln(20);
 }
 // Tabla coloreada PASO 2
@@ -64,7 +67,7 @@ function FancyTable($header, $data)
     $this->SetLineWidth(.3);
     $this->SetFont('','B');
     // Cabecera
-    $w = array(35, 35, 45, 40);
+    $w = array(15, 110, 15, 15);
     for($i=0;$i<count($header);$i++)
         $this->Cell($w[$i],7,$header[$i],1,0,'C',true);
     $this->Ln();
@@ -95,12 +98,12 @@ function FancyTable($header, $data)
 // Creación del objeto de la clase heredada
 $pdf = new PDF();
 // Títulos de las columnas
-$header = array('Asignatura', 'Periodo', 'Promedio', 'Estatus');
+$header = array('Periodo','Pregunta', 'Promedio', 'Estatus');
 // Carga de datos
-$data = $pdf->LoadData('paises.txt');
+$data = $pdf->LoadData('calif.txt');
 $pdf->AliasNbPages();
 $pdf->AddPage();
-$pdf->SetFont('Arial','',12);
+$pdf->SetFont('Arial','',9);
     $pdf->Datos();
     $pdf->FancyTable($header,$data);
     $pdf->Output();

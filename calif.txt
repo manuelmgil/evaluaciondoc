@@ -1,0 +1,4 @@
+2021A;Que tan satisfecho estas con el curso?;5;5
+2021A;El profesor uso materiales didacticos para explicar mejor los temas;5;5
+2021A;Hubo mucha participacion de los alumnos durante el curso;5;5
+2021A;Que tan satisfecho estas con el curso?;5;5

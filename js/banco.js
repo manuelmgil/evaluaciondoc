@@ -1,8 +1,11 @@
 const tabla = document.querySelector("tbody");
 const crear = document.getElementById("crear");
+const editar = document.getElementById("editarbtn");
 const input = document.getElementById("nuevapregunta");
+const editvalue = document.getElementById("editarvalue");
 const buscar = document.getElementById("buscar");
 const buscarbtn = document.getElementById("buscarbtn");
+let idedit = '';
 
 let preguntas = [
     {
@@ -55,6 +58,8 @@ const busqueda = () => {
                 but2.classList.add("btn-danger");
                 tr.setAttribute("id", "idpre" + element.id)
                 but.appendChild(document.createTextNode("Editar"))
+                but.setAttribute("data-bs-toggle", "modal");
+                but.setAttribute("data-bs-target", "#staticBackdrop");
                 but2.appendChild(document.createTextNode("Eliminar"))
                 tdbut.appendChild(but);
                 tdbut.appendChild(but2);
@@ -93,6 +98,8 @@ let llenado = () => {
         but2.classList.add("btn-danger");
         tr.setAttribute("id", "idpre" + element.id)
         but.appendChild(document.createTextNode("Editar"))
+        but.setAttribute("data-bs-toggle", "modal");
+        but.setAttribute("data-bs-target", "#staticBackdrop");
         but2.appendChild(document.createTextNode("Eliminar"))
         tdbut.appendChild(but);
         tdbut.appendChild(but2);
@@ -107,6 +114,7 @@ let llenado = () => {
         tr.appendChild(tdbut);
         tabla.appendChild(tr);
         deleteEvent("idpre" + element.id, element.id);
+        editEvent("idpre" + element.id, element.id);
     });
 }
 
@@ -182,6 +190,19 @@ const checkvalue = () => {
     return input.value;
 }
 
+const guardarCam = () => {
+    preguntas.forEach((e, i) => {
+        if (e.id === idedit) {
+            e.pregunta = editvalue.value;
+
+        }
+    });
+    tabla.replaceChildren();
+    input.value = '';
+    buscar.value = '';
+    llenado();
+}
+
 const deleteEvent = (id, numero) => {
     const algo = document.getElementById(id);
     const elim = algo.children[4].children[1];
@@ -199,6 +220,26 @@ const deleteEvent = (id, numero) => {
     })
 }
 
+const editEvent = (id, numero) => {
+    const algo = document.getElementById(id);
+    const edit = algo.children[4].children[0];
+    edit.addEventListener('click', (e) => {
+        const temp1 = edit.parentElement.parentElement.getAttribute("id");
+        idedit = parseInt(temp1.substr(5, 10))
+        const temp = id.substr(5, 10);
+        preguntas.forEach((elem, i) => {
+            if (i == temp) {
+                editvalue.value = elem.pregunta;
+            }
+        })
+    });
+}
+
+
+
+
+
 crear.addEventListener("click", crearpre);
 buscar.addEventListener("input", busqueda);
+editar.addEventListener('click', guardarCam);
 llenado();

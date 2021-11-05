@@ -59,7 +59,7 @@ const busqueda = () => {
                 tr.setAttribute("id", "idpre" + element.id)
                 but.appendChild(document.createTextNode("Editar"))
                 but.setAttribute("data-bs-toggle", "modal");
-                but.setAttribute("data-bs-target", "#staticBackdrop");
+                but.setAttribute("data-bs-target", "#staticBackdrop2");
                 but2.appendChild(document.createTextNode("Eliminar"))
                 tdbut.appendChild(but);
                 tdbut.appendChild(but2);
@@ -99,7 +99,7 @@ let llenado = () => {
         tr.setAttribute("id", "idpre" + element.id)
         but.appendChild(document.createTextNode("Editar"))
         but.setAttribute("data-bs-toggle", "modal");
-        but.setAttribute("data-bs-target", "#staticBackdrop");
+        but.setAttribute("data-bs-target", "#staticBackdrop2");
         but2.appendChild(document.createTextNode("Eliminar"))
         tdbut.appendChild(but);
         tdbut.appendChild(but2);

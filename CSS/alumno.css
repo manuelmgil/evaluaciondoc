@@ -1,4 +1,5 @@
 /* General */
+A:link {text-decoration: none }
 body{
     height: 100%;
     width: 100%;
@@ -119,7 +120,13 @@ color: white;
 }
 .tarjeta.incompleto{
     background-color: #EFDC60;
+    text color: white;
+    height: 150px;
+    text-decoration:none;
+    margin-bottom: 0;
+    
 }
+
 .Estatus{
    text-align: center;
 

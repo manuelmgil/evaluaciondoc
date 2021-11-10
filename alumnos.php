@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/alumno.css">
+    <link rel="stylesheet" href="CSS/administrador.css">
+    <?php require("conexion/Connect_db.php"); ?>
     <title>Evaluación docente</title>
 </head>
 
@@ -31,55 +34,143 @@
             <!-- Periodo en consulta--> Periodo SEP-DIC
         </p>
     </div>
+    <p class="textosuave">Seleccione un cuestionario para empezar a evaluar</p>
+    <!-- Variables de prueba -->
+    <?php
+    $maestro= array();
+    $maestro= ['Mariano Xiu Chan', 'Carlos Tamay', 'Manuel Flores', 'Christian Guadalupe', 'Mariano Xiu Chan', 'Carlos Tamay', 'Manuel Flores', 'Christian Guadalupe'  ];
+    $materia= array();
+    $materia= ['POO','Algoritmos', 'Base de Datos','Ing Requerimientos','POO','Algoritmos', 'Base de Datos','Ing Requerimientos' ];
+    $estatus= array();
+    $estatus= ['completo','incompleto','completo','incompleto', 'completo','incompleto','completo','incompleto' ];
+    ?>
+    <!-- Fin variables de prueba -->
     <div class="contenedor">
-        <p class="textosuave">Seleccione un cuestionario para empezar a evaluar</p>
-        <hr>
-        <div class="grid">
-            <!-- tarjeta -->
-            <div class="tarjeta incompleto">
-                <p class="Estatus">Incompleto</p>
-                <p class="Nombre">Mariano Xiu Chan</p>
-                <p class="Materia">Algoritmos</p>
-                <div class="separar">
-                    <p class="Carrera">Ingeniería en Software</p>
-                    <p class="Periodo pushperiodo">Periodo SEP-DIC</p>
-                </div>
-            </div>
-            <!-- tarjeta fin -->
-            <!-- tarjeta -->
-            <div class="tarjeta incompleto">
-                <p class="Estatus">Incompleto</p>
-                <p class="Nombre">Mariano Xiu Chan</p>
-                <p class="Materia">Algoritmos</p>
-                <div class="separar">
-                    <p class="Carrera">Ingeniería en Software</p>
-                    <p class="Periodo pushperiodo">Periodo SEP-DIC</p>
-                </div>
-            </div>
-            <!-- tarjeta fin -->
-            <!-- tarjeta -->
-            <div class="tarjeta pendiente">
-                <p class="Estatus">Incompleto</p>
-                <p class="Nombre">Mariano Xiu Chan</p>
-                <p class="Materia">Algoritmos</p>
-                <div class="separar">
-                    <p class="Carrera">Ingeniería en Software</p>
-                    <p class="Periodo pushperiodo">Periodo SEP-DIC</p>
-                </div>
-            </div>
-            <!-- tarjeta fin -->
-            <!-- tarjeta -->
-            <div class="tarjeta pendiente">
-                <p class="Estatus">Incompleto</p>
-                <p class="Nombre">Mariano Xiu Chan</p>
-                <p class="Materia">Algoritmos</p>
-                <div class="separar">
-                    <p class="Carrera">Ingeniería en Software</p>
-                    <p class="Periodo pushperiodo">Periodo SEP-DIC</p>
-                </div>
-            </div>
-            <!-- tarjeta fin -->
-        </div>
+        <?php
+            $tamaño=3;
+            $cont = 0;
+                if($tamaño<=4)
+                {
+
+                echo '<div class="row">';
+                    while($cont<4 and $cont<=$tamaño)
+                    {
+                    if($estatus[$cont]=='completo')
+                    {
+                        echo 
+                    '
+                
+                    <div class="col">
+                        <!-- tarjeta -->
+                        <div class="tarjeta '.$estatus[$cont].'">
+                            
+                                <p class="Estatus">'.$estatus[$cont].'</p>
+                                <p class="Nombre">'.$maestro[$cont].'</p>
+                                <p class="Materia">'.$materia[$cont].'</p>
+                                <div class="separar">
+                                    <p class="Carrera">Ing. en Software</p>
+                                    <p>/</p>
+                                    <p class="Periodo pushperiodo">Periodo SEP-DIC</p>
+                                </div>
+                        </div>
+                        <!-- tarjeta fin -->
+                    </div>
+                    ';
+
+                    }
+                    else
+                    {
+                        echo 
+                        '
+                    
+                        <div class="col">
+                            <!-- tarjeta -->
+                            <div class="tarjeta '.$estatus[$cont].'">
+                                <a href="./cuestionario.html">
+                                    <p class="Estatus">'.$estatus[$cont].'</p>
+                                    <p class="Nombre">'.$maestro[$cont].'</p>
+                                    <p class="Materia">'.$materia[$cont].'</p>
+                                    
+                                    <div class="separar">
+                                        <p class="Carrera">Ing. en Software</p>
+                                        <p>/</p>
+                                        <p class="Periodo pushperiodo">Periodo SEP-DIC</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- tarjeta fin -->
+                        </div>
+                        ';
+                    }
+
+                    $cont++;
+                    }
+                echo'</div>';
+                
+                }
+                if($tamaño>4 and $tamaño<=8)
+                {
+
+                    echo '<br> <div class="row">';
+                    while($cont<8 and $cont<=$tamaño)
+                    {
+                    if($estatus[$cont]=='completo')
+                    {
+                        echo 
+                    '
+                
+                    <div class="col">
+                        <!-- tarjeta -->
+                        <div class="tarjeta '.$estatus[$cont].'">
+                            
+                                <p class="Estatus">'.$estatus[$cont].'</p>
+                                <p class="Nombre">'.$maestro[$cont].'</p>
+                                <p class="Materia">'.$materia[$cont].'</p>
+                                <div class="separar">
+                                    <p class="Carrera">Ing. en Software</p>
+                                    <p>/</p>
+                                    <p class="Periodo pushperiodo">Periodo SEP-DIC</p>
+                                </div>
+                        </div>
+                        <!-- tarjeta fin -->
+                    </div>
+                    ';
+
+                    }
+                    else
+                    {
+                        echo 
+                        '
+                    
+                        <div class="col">
+                            <!-- tarjeta -->
+                            <div class="tarjeta '.$estatus[$cont].'">
+                                <a href="./cuestionario.html">
+                                    <p class="Estatus">'.$estatus[$cont].'</p>
+                                    <p class="Nombre">'.$maestro[$cont].'</p>
+                                    <p class="Materia">'.$materia[$cont].'</p>
+                                    
+                                    <div class="separar">
+                                        <p class="Carrera">Ing. en Software</p>
+                                        <p>/</p>
+                                        <p class="Periodo pushperiodo">Periodo SEP-DIC</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- tarjeta fin -->
+                        </div>
+                        ';
+                    }
+
+                    $cont++;
+                    }
+                echo'</div>';
+                
+                }
+        ?>
+      
+       
+            
     </div>
 
 </body>

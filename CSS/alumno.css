@@ -70,10 +70,6 @@ div.infoperiodo{
 /* info periodo fin */
 /* contenido */
 
-.contenedor{
-    padding: 4px 10px;
-    
-}
 .textosuave{
     font-size: 1.3em;
     font-weight: 300;
@@ -107,6 +103,9 @@ div.infoperiodo{
     gap:30px;
     grid-template-columns:  repeat(auto-fill, minmax(250px, 1fr));
 }
+.row{
+    
+}
 .tarjeta{
     border-radius: 27px;
     padding: 12px;
@@ -120,8 +119,16 @@ color: white;
 }
 .tarjeta.incompleto{
     background-color: #EFDC60;
-    text color: white;
-    height: 150px;
+    color: white;
+    height: auto;
+    text-decoration:none;
+    margin-bottom: 0;
+    
+}
+.tarjeta.completo{
+    background-color: #158a1b;
+    color: white;
+    height: auto;
     text-decoration:none;
     margin-bottom: 0;
     

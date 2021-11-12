@@ -1,13 +1,7 @@
-//Variables
-const grid = document.getElementById("grid");
-
-
-//Array
 let cues = [
 
     {
         id: '0',
-        tipo: "Docente a Docente",
         periodo: 'SEP-DIC',
         fechac: '02-11-21',
         fecham: '02-11-21',
@@ -47,7 +41,6 @@ let cues = [
     },
     {
         id: '1',
-        tipo: "Director a Docente",
         periodo: 'SEP-DIC',
         fechac: '02-11-21',
         fecham: '02-11-21',
@@ -87,7 +80,6 @@ let cues = [
     },
     {
         id: '2',
-        tipo: "Alumno a Docente",
         periodo: 'SEP-DIC',
         fechac: '02-11-21',
         fecham: '02-11-21',
@@ -129,92 +121,6 @@ let cues = [
 
 ]
 
-
-//Creación de tarjeta
-const crearTarjeta = (vnombre, vmateria, vcarrera, vperiodo) => {
-    //Creación de elemetos
-    //Aqui se crean las etiquetas que conforman la tarjeta
-    let link = document.createElement('a');
-    let tarjeta = document.createElement('div');
-    let nombre = document.createElement('p');
-    let materia = document.createElement('p');
-    let separacion = document.createElement('div');
-    let carrera = document.createElement('p');
-    let periodo = document.createElement('p');
-
-    //aqui se preparan
-    //se crea el <a> que alberga la tarjeta
-    link.setAttribute('href', './editcuestionario.html');
-
-    //Se crea el primer <div>
-    link.appendChild(tarjeta);
-    tarjeta.classList.add('tarjeta');
-    tarjeta.classList.add('cuestionario');
-
-    //se crean los primeros <p> fuera del <div> secundario
-    nombre.classList.add("Nombre");
-    nombre.appendChild(document.createTextNode(vnombre));
-    materia.classList.add("Materia");
-    materia.appendChild(document.createTextNode(vmateria));
-
-    //Se incluyen en el nodo padre
-    tarjeta.appendChild(nombre);
-    tarjeta.appendChild(materia);
-
-    //Se crea el <div> secundario
-    separacion.classList.add("separar");
-
-    //se crean los <p> finales
-    carrera.classList.add("Carrera");
-    carrera.appendChild(document.createTextNode(vcarrera));
-    periodo.classList.add("Periodo");
-    periodo.classList.add("pushperiodo");
-    periodo.appendChild(document.createTextNode(vperiodo));
-
-    //se rellena el <div> secundario con los otros dos <p>
-    separacion.appendChild(carrera);
-    separacion.appendChild(periodo);
-
-    //Se añade el <div> secundario al <div>principal
-    tarjeta.appendChild(separacion);
-
-    //aqui se imprimen en el grid
-    grid.appendChild(link);
+module.exports = {
+    cues
 }
-
-
-
-
-//Prueba Creacion de tarjeta
-const primerLlenado = () => {
-    cues.forEach((element, i) => {
-        crearTarjeta(
-            element.tipo,
-            "",
-            () => {
-                let count = 0
-                element.q.forEach(() => {
-                    count++;
-                })
-                return count
-            },
-            element.periodo
-        )
-
-    });
-}
-
-
-
-//Event Listeners
-
-
-//Invocacion de funciones
-const a = () => {
-    let count = 0
-    cues[1].q.forEach(() => {
-        count++;
-    })
-    return count
-}
-console.log(a);

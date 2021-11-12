@@ -45,6 +45,7 @@
                 </p>
             </div>
             <div>
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
                 <table class="table">
 
                     <!-- Aqui deberia haber un while por lo que el codigo se reduce -->
@@ -52,65 +53,77 @@
                         <tr>
                             <th scope="col" style="width: 5%"></th>
                             <th scope="col" style="width: 75%"></th>
-                            <th scope="col" style="width: 20%"></th>
+                            <th scope="col" style="width: 20%">   MM  | M | Reg | B | MB</th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-                            <td>
-                                <div class="fijo">
-                                    <input type="radio" name="q1" value="1">
-                                    <input type="radio" name="q1" value="3">
-                                    <input type="radio" name="q1" value="4">
-                                    <input type="radio" name="q1" value="5">
-                                    <input type="radio" name="q1" value="2">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-                            <td>
-                                <div class="fijo">
-                                    <input type="radio" name="q2" value="1">
-                                    <input type="radio" name="q2" value="2">
-                                    <input type="radio" name="q2" value="3">
-                                    <input type="radio" name="q2" value="4">
-                                    <input type="radio" name="q2" value="5">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-                            <td>
-                                <div class="fijo">
-                                    <input type="radio" name="q3" value="1">
-                                    <input type="radio" name="q3" value="2">
-                                    <input type="radio" name="q3" value="3">
-                                    <input type="radio" name="q3" value="4">
-                                    <input type="radio" name="q3" value="5">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-                            <td>
-                                <div class="fijo">
-                                    <input type="radio" name="q4" value="1">
-                                    <input type="radio" name="q4" value="2">
-                                    <input type="radio" name="q4" value="3">
-                                    <input type="radio" name="q4" value="4">
-                                    <input type="radio" name="q4" value="5">
-                                </div>
-                            </td>
-                        </tr>
+                         <!-- Variables de prueba -->
+                        <?php
+                            $npreguntas= 5;
+                            $preguntas= array();
+                            $preguntas=['Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet'];
+                        ?>
+                        
+                        
+                         <!-- Fin variables de prueba -->
+                        <?php
+                            $cont=0;
+                            while($cont<$npreguntas)
+                            {
+                                $row=$cont+1;
+                                echo
+                                    '
+                                    <tr>
+                                        <th scope="row">'.$row.'</th>
+                                        <td>'.$preguntas[$cont].'</td>
+                                        <td>
+                                            <div class="fijo">
+                                                <input type="radio" name="q'.$cont.'" value="1">
+                                                <input type="radio" name="q'.$cont.'" value="2">
+                                                <input type="radio" name="q'.$cont.'" value="3">
+                                                <input type="radio" name="q'.$cont.'" value="4">
+                                                <input type="radio" name="q'.$cont.'" value="5">
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    ';
+                                $cont++;
+                            }
+                        ?>
+                        
+                        
                     </tbody>
                 </table>
+                <input type="submit">
+                </form>
+                 <!-- Envio de datos por POST de Prueba  -->
+                    <?php
+                    if ($_SERVER["REQUEST_METHOD"]=="POST")
+                    {
+                        $prueba=array();
+                        $prueba[0]=$_POST['q0'];
+                        $prueba[1]=$_POST['q1'];
+                        $prueba[2]=$_POST['q2'];
+                        $prueba[3]=$_POST['q3'];
+                        $prueba[4]=$_POST['q4'];
+                        if(empty($prueba[0] or $prueba[1] or $prueba[2] or  $prueba[3] or $prueba[4] ))
+                        {
+                            echo"Sin datos";
+
+                        }
+                        else
+                        {
+                            echo $prueba[0];
+                            echo $prueba[1];
+                            echo $prueba[2];
+                            echo $prueba[3];
+                            echo $prueba[4];
+                        }
+                    }
+                    ?>
+                 <!-- Fin de envio de datos por POST de Prueba  -->
             </div>
         </div>
     </div>

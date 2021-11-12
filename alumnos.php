@@ -86,7 +86,7 @@
                         <div class="col">
                             <!-- tarjeta -->
                             <div class="tarjeta '.$estatus[$cont].'">
-                                <a href="./cuestionario.html">
+                                <a href="./cuestionario.php">
                                     <p class="Estatus">'.$estatus[$cont].'</p>
                                     <p class="Nombre">'.$maestro[$cont].'</p>
                                     <p class="Materia">'.$materia[$cont].'</p>
@@ -145,7 +145,7 @@
                         <div class="col">
                             <!-- tarjeta -->
                             <div class="tarjeta '.$estatus[$cont].'">
-                                <a href="./cuestionario.html">
+                                <a href="./cuestionario.php">
                                     <p class="Estatus">'.$estatus[$cont].'</p>
                                     <p class="Nombre">'.$maestro[$cont].'</p>
                                     <p class="Materia">'.$materia[$cont].'</p>

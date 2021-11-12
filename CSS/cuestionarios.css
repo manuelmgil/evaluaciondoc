@@ -144,3 +144,8 @@ color: white;
 div .separar p{
     font-size: .8em;
 }
+
+.datos {
+    display:flex;
+}
+

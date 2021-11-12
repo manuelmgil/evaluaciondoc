@@ -62,7 +62,7 @@
                         <?php
                             $npreguntas= 5;
                             $preguntas= array();
-                            $preguntas=['Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet'];
+                            $preguntas=['Pregunta 1', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet'];
                         ?>
                         
                         

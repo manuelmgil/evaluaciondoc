@@ -1,4 +1,5 @@
 /* General */
+A:link {text-decoration: none }
 body{
     height: 100%;
     width: 100%;
@@ -69,10 +70,6 @@ div.infoperiodo{
 /* info periodo fin */
 /* contenido */
 
-.contenedor{
-    padding: 4px 10px;
-    
-}
 .textosuave{
     font-size: 1.3em;
     font-weight: 300;
@@ -106,32 +103,32 @@ div.infoperiodo{
     gap:30px;
     grid-template-columns:  repeat(auto-fill, minmax(250px, 1fr));
 }
+
 .tarjeta{
     border-radius: 27px;
-    padding: 12px;
 color: white;
 }
 .tarjeta p {
     margin-bottom: 0;
 }
-.tarjeta.pendiente{
-    background-color: #F9AA43;
+
+    
+
+.tarjeta.cuestionario{
+    background-color: #2933be;
+    padding: 18px;
+    color: white;
+    height: auto;
+    text-decoration:none;
+    margin-bottom: 0;
     
 }
-.tarjeta.incompleto{
-    background-color: #EFDC60;
 
-}
 .Estatus{
    text-align: center;
 
 }
-.incompleto .Estatus {
-       color: #EE8E12;
-}
-.pendiente .Estatus {
-       color: #F63B3B;
-}
+
 
 .Nombre{
     font-size: 1.3em;
@@ -145,9 +142,5 @@ color: white;
 }
 div .separar p{
     font-size: .8em;
-}
-
-.datos {
-    display:flex;
 }
 

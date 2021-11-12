@@ -119,6 +119,14 @@ color: white;
 }
 .tarjeta.incompleto{
     background-color: #EFDC60;
+    text-align: center;
+    color:white;
+    width: 200px;
+    height: 95px;
+    padding: 25px 9px;
+    border-radius: 47px;
+    margin-right: auto;
+    margin-left: auto;
 }
 .Estatus{
    text-align: center;

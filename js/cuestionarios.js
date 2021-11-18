@@ -191,13 +191,7 @@ const primerLlenado = () => {
         crearTarjeta(
             element.tipo,
             "",
-            () => {
-                let count = 0
-                element.q.forEach(() => {
-                    count++;
-                })
-                return count
-            },
+            "25 preguntas",
             element.periodo
         )
 
@@ -210,11 +204,4 @@ const primerLlenado = () => {
 
 
 //Invocacion de funciones
-const a = () => {
-    let count = 0
-    cues[1].q.forEach(() => {
-        count++;
-    })
-    return count
-}
-console.log(a);
+primerLlenado();

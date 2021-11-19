@@ -1,0 +1,15 @@
+/* Por Clase */
+.cuestionario{
+    width: 80%;
+    margin: 3em auto;
+}
+
+select.tipoCuestionario {
+    width: 25em;
+}
+select.periodoCuestionario {
+    width: 25em;
+}
+select.average {
+    width: 15em;
+}

@@ -14,46 +14,99 @@
 
 <body>
     <nav>
-        <a href="administrador.php"><img src="img/logo.jpg" alt="logo">
+        <a href="administrador.html">
+            <img src="img/logo.jpg" alt="logo">
         </a>
-        <p class="uninombre">Universidad Politécnica de Quintana Roo</p>
+        <p class="uninombre">
+            Universidad Politécnica de Quintana Roo
+        </p>
         <div class="pushnav">
             <p>
                 <!-- Nombre en consulta-->Manuel Iván Mukul Gil
             </p>
             <a href="#">
-                <p class="sesionnav">Cerrar Sesión</p>
+                <p class="sesionnav">
+                    Cerrar Sesión
+                </p>
             </a>
         </div>
     </nav>
+
     <!-- Info del periodo -->
     <div class="infoperiodo">
-        <p>Sistema de Evaluación Docente</p>
+        <p>
+            Sistema de Evaluación Docente
+        </p>
         <p class="pushperiodo">
         </p>
     </div>
-    <!-- Fin de la pestaña -->
+
+    <!-- Fin de la pestaña-->
+
     <div class="contenido">
         <div class="datos">
-            <p class="textodatos"> Administración de Cuestionarios
-            </p>
-            <div class="pushperiodo mt-2 me-4">
-                <p>Seleccione un cuestionario para editarlo
+
+            <!-- Dropdown y título-->
+            <div class="">
+                <p class="textodatos">
+                    Administración de Cuestionarios
                 </p>
-                <button class="datos pushperiodo btn btn-primary"> Crear nuevo</button>
+                <div class="flex">
+                    <div class="dropdown ms-4">
+                        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Ordenar por Tipo
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" id="tipoAD" href="#">Alumno a Docente</a></li>
+                            <li><a class="dropdown-item" id="tipoDD" href="#">Docente a Docente</a></li>
+                            <li><a class="dropdown-item" id="tipoDirD" href="#">Director a Docente</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown ms-3">
+                        <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink2"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Ordenar por Periodo
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
+                            <li><a class="dropdown-item" id="p1" href="#">Septiembre - Diciembre</a></li>
+                            <li><a class="dropdown-item" id="p2" href="#">Enero - Abril</a></li>
+                            <li><a class="dropdown-item" id="p3" href="#">Mayo - Agosto</a></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary ms-3" id="verTodo">Ver todo</button>
+                    <p class="dropdown_value">
+
+                    </p>
+                </div>
+            </div>
+            <div class="pushperiodo mt-2 me-4">
+                <p>
+                    Seleccione un cuestionario para editarlo
+                </p>
+                <a href="nuevoCuestionario.html">
+                    <button class="datos pushperiodo btn btn-primary"> Crear
+                        nuevo</button>
+                </a>
             </div>
         </div>
-        <div class="contenedor">
-            <hr>
-            <div class="grid" id="grid">
+    </div>
 
-
-            </div>
-
+    <!-- Inicia el contenido-->
+    <div class="contenedor">
+        <hr>
+        <div class="grid" id="grid">
+            <!--  Se rellena esta parte con las tarjetas de los cuestionarios -->
 
         </div>
+    </div>
 
-        <script src="./js/cuestionarios.js"></script>
+    <script src="./js/cuestionarios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

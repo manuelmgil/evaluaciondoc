@@ -130,7 +130,7 @@ color: white;
 }
 
 
-.Nombre{
+.tipo{
     font-size: 1.3em;
     font-weight: 500;
 }
@@ -144,3 +144,14 @@ div .separar p{
     font-size: .8em;
 }
 
+.flex {
+    display: flex;
+}
+
+.dropdown_value{
+    align-self: center;
+    margin-left: 1em;
+    margin-bottom: 0;
+    font-weight: 500;
+    color: #373537;
+}

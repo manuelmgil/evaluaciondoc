@@ -50,13 +50,12 @@
             <!-- Botones título-->
             <div>
                 <p class="textodatos">
-                    Editar Cuestionario
+                    Asignar Cuestionario
                 </p>
 
             </div>
             <div class="pushperiodo mt-2 me-4 ">
-                <a href="cuestionarios.html">
-
+                <a href="asignacion.html">
                     <button class=" pushperiodo btn btn-danger"> Cancelar</button>
                 </a>
                 <button class=" pushperiodo btn btn-primary"> Guardar</button>
@@ -67,37 +66,31 @@
     <!-- Inicia el contenido-->
     <div class="contenedor">
         <hr>
-        <div class="cuestionario">
-            <!--  Se rellena esta parte con las del cuestionario -->
-            <div class="group mt-4 mb-5">
-                <label for="campopregunta">Agregue una pregunta</label>
-                <input type="text" class="pregunta" name="campopregunta">
-                <button class="btn btn-success automatic">Agregar</button>
-            </div>
 
-            <div class="pregunta mb-3">
-                <p>1. ¿El maestro realiza una evaluación diagnóstica al inicio del cuatrimestre ?</p>
-                <div class="flex">
-                    <button class="btn btn-secondary automatic ">Editar</button>
-                    <button class="btn btn-danger automatic ms-2">Eliminar</button>
-                </div>
-            </div>
-            <div class="pregunta mb-3">
-                <p>2. ¿El maestro realiza una evaluación diagnóstica al inicio del cuatrimestre ?</p>
-                <div class="flex">
-                    <button class="btn btn-secondary automatic ">Editar</button>
-                    <button class="btn btn-danger automatic ms-2">Eliminar</button>
-                </div>
-            </div>
-            <div class="preguntamb-3">
-                <p>3. ¿El maestro realiza una evaluación diagnóstica al inicio del cuatrimestre ?</p>
-                <div class="flex">
-                    <button class="btn btn-secondary automatic ">Editar</button>
-                    <button class="btn btn-danger automatic ms-2">Eliminar</button>
-                </div>
+        <!--  Aqui empieza el formulario para crear un cuestionario -->
+        <div class="cuestionario">
+            <h2>Seleccione el evaluador y el evaluado para el cuestionario ${ info }</h2>
+
+            <div class="selectGrupo flex mt-3">
+
+                <select class="form-select average me-3" aria-label="Default select Docente">
+                    <option selected>Docente</option>
+                    <option value="1">Opcion 1</option>
+                    <option value="2">Opcion 2</option>
+                    <option value="3">LOpcion 3
+
+                    </option>
+                </select>
+                <select class="form-select average" aria-label="Default select carrera">
+                    <option selected>Grupo</option>
+                    <option value="1">Ingeniería en Software</option>
+                    <option value="2">Ingeniería Financiera</option>
+                    <option value="3">Licenciatura en Terapia Física</option>
+                </select>
             </div>
 
         </div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

@@ -13,3 +13,7 @@ select.periodoCuestionario {
 select.average {
     width: 15em;
 }
+
+input.pregunta{
+    width: 75%;
+}

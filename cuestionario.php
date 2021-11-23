@@ -12,15 +12,14 @@
     <title>Evaluación docente</title>
 </head>
 <?php
-    if ($_SERVER["REQUEST_METHOD"]=="POST")
-    {
-        $maestro=$_POST['maestro'];                  
-
-    }
+    $maestro= $_GET['n'];
+    $materia= $_GET['mat'];
+    $carrera= $_GET['c'];
     if(empty($maestro))
     {
         $maestro= 'Maestro';
     }
+
 ?>
 
 <body>
@@ -46,8 +45,8 @@
     </div>
     <div class="contenido">
         <div class="datos">
-            <p class="textodatos"> <?php echo $maestro; ?> | Ingenieria en Software</p>
-            <p class="textomateria"> Algoritmos</p>
+            <p class="textodatos"> <?php echo $maestro; ?> | <?php echo $carrera; ?> </p>
+            <p class="textomateria"> <?php echo $materia; ?></p>
         </div>
         <div class="contenedor">
             <div class="">
@@ -69,7 +68,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                         <!-- Variables de prueba -->
+                         <!-- Variables de prueba  AQUI DEBERIA HACER CONSULTA DEL CUESTIONARIO ACTIVO-->
                         <?php
                             $preguntas= array();
                             $preguntas=['Pregunta 1', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet', 'Pregunta 1', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet'];

@@ -33,14 +33,16 @@
         </p>
     </div>
     <p class="textosuave">Seleccione un cuestionario para empezar a evaluar</p>
-    <!-- Variables de prueba -->
+    <!-- Variables de prueba, esto deberia ser recibido por una consulta a la BDD -->
     <?php
     $maestro = array();
     $maestro = ['Mariano Xiu Chan', 'Carlos Tamay', 'Manuel Flores', 'Christian Guadalupe', 'Mariano Xiu Chan', 'Carlos Tamay', 'Manuel Flores', 'Christian Guadalupe'];
     $materia = array();
     $materia = ['POO', 'Algoritmos', 'Base de Datos', 'Ing Requerimientos', 'POO', 'Algoritmos', 'Base de Datos', 'Ing Requerimientos'];
     $estatus = array();
-    $estatus = ['completo', 'incompleto', 'completo', 'incompleto', 'completo', 'incompleto', 'completo', 'incompleto'];
+    $estatus = ['incompleto', 'incompleto', 'incompleto', 'incompleto', 'incompleto', 'incompleto', 'incompleto', 'incompleto'];
+    $carrera = 'Ing. Software';
+    $periodo = 'SEP-DIC 2021';
     ?>
     <!-- Fin variables de prueba -->
     <div class="contenedor">
@@ -63,7 +65,7 @@
                                 <p class="Nombre">' . $maestro[$cont] . '</p>
                                 <p class="Materia">' . $materia[$cont] . '</p>
                                 <div class="separar">
-                                    <p class="Carrera">Ing. en Software</p>
+                                    <p class="Carrera">'.$carrera.'</p>
                                     <p>/</p>
                                     <p class="Periodo pushperiodo">Periodo SEP-DIC</p>
                                 </div>
@@ -78,15 +80,13 @@
                         <div class="col">
                             <!-- tarjeta -->
                             <div class="tarjeta ' . $estatus[$cont] . '">
-                                <a href="./cuestionario.php">
+                                <a href="./cuestionario.php?n='.$maestro[$cont].'&mat='.$materia[$cont].'&c='.$carrera.'">
                                     <p class="Estatus">' . $estatus[$cont] . '</p>
                                     <p class="Nombre">' . $maestro[$cont] . '</p>
-                                    <p class="Materia">' . $materia[$cont] . '</p>
+                                    <p class="Materia">'.$materia[$cont].'</p>
                                     
                                     <div class="separar">
-                                        <p class="Carrera">Ing. en Software</p>
-                                        <p>/</p>
-                                        <p class="Periodo pushperiodo">Periodo SEP-DIC</p>
+                                        <p class="Carrera">'.$carrera.'</p>
                                     </div>
                                 </a>
                             </div>

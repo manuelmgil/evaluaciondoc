@@ -11,6 +11,17 @@
     <link rel="stylesheet" href="CSS/cuestionario.css">
     <title>Evaluación docente</title>
 </head>
+<?php
+    if ($_SERVER["REQUEST_METHOD"]=="POST")
+    {
+        $maestro=$_POST['maestro'];                  
+
+    }
+    if(empty($maestro))
+    {
+        $maestro= 'Maestro';
+    }
+?>
 
 <body>
     <nav>
@@ -35,7 +46,7 @@
     </div>
     <div class="contenido">
         <div class="datos">
-            <p class="textodatos"> Mariano Xiu | Ingenieria en Software</p>
+            <p class="textodatos"> <?php echo $maestro; ?> | Ingenieria en Software</p>
             <p class="textomateria"> Algoritmos</p>
         </div>
         <div class="contenedor">
@@ -60,9 +71,9 @@
                     <tbody>
                          <!-- Variables de prueba -->
                         <?php
-                            $npreguntas= 5;
                             $preguntas= array();
-                            $preguntas=['Pregunta 1', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet'];
+                            $preguntas=['Pregunta 1', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet', 'Pregunta 1', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet'];
+                            $npreguntas= sizeof($preguntas);
                         ?>
                         
                         
@@ -97,17 +108,18 @@
                     </tbody>
                 </table>
                 <input type="submit">
-                </form>
+            </form>
                  <!-- Envio de datos por POST de Prueba  -->
                     <?php
                     if ($_SERVER["REQUEST_METHOD"]=="POST")
                     {
                         $prueba=array();
-                        $prueba[0]=$_POST['q0'];
-                        $prueba[1]=$_POST['q1'];
-                        $prueba[2]=$_POST['q2'];
-                        $prueba[3]=$_POST['q3'];
-                        $prueba[4]=$_POST['q4'];
+                        $cont=0;
+                        while($cont<$npreguntas)
+                        {
+                            $prueba[$cont]=$_POST['q'.$cont];
+                            $cont++;
+                        }
                         if(empty($prueba[0] or $prueba[1] or $prueba[2] or  $prueba[3] or $prueba[4] ))
                         {
                             echo"Sin datos";
@@ -115,11 +127,13 @@
                         }
                         else
                         {
-                            echo $prueba[0];
-                            echo $prueba[1];
-                            echo $prueba[2];
-                            echo $prueba[3];
-                            echo $prueba[4];
+                            $i=0;
+                            while($i<$npreguntas)
+                            {
+                                echo $prueba[$i];
+                                $i++;
+                            }
+
                         }
                     }
                     ?>

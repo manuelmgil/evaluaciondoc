@@ -1,0 +1,159 @@
+/* General */
+A:link {text-decoration: none }
+body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', Courier, monospace;
+
+}
+/* nav */
+.uninombre{
+    margin-left: 18px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+.pushnav{
+    margin-left: auto;
+    display: flex;
+    align-self: center;
+}
+.sesionnav{
+    margin-left: 8px;
+    font-size: .7em;
+    text-decoration: underline;
+}
+nav img {
+    height: 30px;
+}
+nav p{
+    margin-bottom: 0;
+}
+nav{
+    padding: 8px 10px;
+    height: 60px;
+    display: flex;
+    color: white;
+    background-color: #323F80;
+    align-items: center;
+}
+nav div p{
+    margin:0;
+}
+nav a {
+    color: white;
+    align-self: center;
+}
+nav a:hover{
+    color:white;
+}
+/* fin nav */
+/* info periodo */
+.infoperiodo {
+    background-color: #63A1E9;
+    display: flex;
+    color: white;
+    padding: 5px 10px;
+    align-items: center;
+    height: 60px;
+    font-weight: 500;
+    font-size: 1.4em;
+}
+div.infoperiodo{
+      border-radius: 0 0 20px 20px;
+}
+.infoperiodo p{
+    margin-bottom: 0;
+}
+.pushperiodo{
+    margin-left: auto;
+}
+/* info periodo fin */
+/* contenido */
+
+.textosuave{
+    font-size: 1.3em;
+    font-weight: 300;
+    color: #7E7878;
+    font-style: italic;
+}
+.textodatos{
+    padding: 0px 25px;
+    font-size: 1.6em;
+    font-weight: 300;
+    color: #4d4747;
+    font-style: italic;
+}
+.textocarrera{
+    padding: 0px 25px;
+    font-size: 1.0m;
+    font-weight: 300;
+    color: #7E7878;
+    font-style: italic;
+}
+.textomateria{
+    padding: 0px 25px;
+    font-size: 1.0em;
+    font-weight: 300;
+    color: #7E7878;
+    font-style: italic;
+}
+/* tarjetas */
+.grid{
+    display: grid;
+    gap:30px;
+    grid-template-columns:  repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.tarjeta{
+    border-radius: 27px;
+    padding: 12px;
+color: white;
+}
+.tarjeta p {
+    margin-bottom: 0;
+}
+.tarjeta.pendiente{
+    background-color: #F9AA43;
+}
+.tarjeta.incompleto{
+    background-color: #EFDC60;
+    color: white;
+    height: auto;
+    text-decoration:none;
+    margin-bottom: 0;
+    
+}
+.tarjeta.completo{
+    background-color: #158a1b;
+    color: white;
+    height: auto;
+    text-decoration:none;
+    margin-bottom: 0;
+    
+}
+
+.Estatus{
+   text-align: center;
+
+}
+.incompleto .Estatus {
+       color: #EE8E12;
+}
+.pendiente .Estatus {
+       color: #F63B3B;
+}
+
+.Nombre{
+    font-size: 1.3em;
+    font-weight: 500;
+}
+.Materia{
+    font-style: italic;
+}
+.separar{
+    display: flex; 
+}
+div .separar p{
+    font-size: .8em;
+}
+

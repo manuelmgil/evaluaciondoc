@@ -7,12 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/alumno.css">
+    <link rel="stylesheet" href="CSS/promedio.css">
     <link rel="stylesheet" href="CSS/banco.css">
     <title>Evaluación docente</title>
 </head>
 
 <body>
+            <!-- Aqui va el codigo que se obtiene de la base de datos, si tuviera una -->
+            <?php
+                $nombre= 'Fernando Araujo Cruz';
+                $materia= array();
+                $materia=['Base de Datos','Programacion Orientada a Objetos','Ingles','Matematicas Discretas'];
+                $periodo='SEP-DIC 2021 ';
+                $id_cuestionario= 1;
+                $promedio=array();
+                $promedio=[5, 5, 5, 5];
+                $tipo=array();
+                $tipo=['Alumno a Docente','Alumno a Docente','Alumno a Docente','Alumno a Docente'];
+                $carrera= 'Ingenieria en Software';
+                $contador=sizeof($materia);
+            ?>
     <nav>
         <a href="administrador.php"><img src="img/logo.jpg" alt="logo">
         </a>
@@ -48,8 +62,13 @@
                             </div>
                         </th>
                         <th scope="col">
-                            <button type="button" class="btn btn-primary" onclick="location.href='reporteador.php' " >Obtener Reporte General</button>
-                            
+                            <form method="post" action="reporteador.php">
+                                <input hidden="hidden" type="hidden" id="nombre" name="nombre" value="<?php echo $nombre?>">
+                                <input hidden="hidden" type="hidden" id="periodo" name="periodo" value="<?php echo $periodo ?>">
+                                <input hidden="hidden" type="hidden" id="cuestionario" name="cuestionario" value= <?php echo $id_cuestionario ?>>
+                                <input hidden="hidden" type="hidden" id="carrera" name="carrera" value="<?php echo $carrera ?>">
+                            <button type="submit" class="btn btn-primary"  >Obtener Reporte General</button>
+                            </form>
                         </th>
                     </tr>
                 </thead>
@@ -69,34 +88,30 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">Base de datos</th>
-                        <td>2021A</td>
-                        <td>5</td>
-                        <td>Alumno a Docente</td>
-                        <td><button type="button" class="btn btn-info" onclick="location.href='reporte.php' ">Reporte de Materia</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Programacion Orientada a Objetos</th>
-                        <td>2021A</td>
-                        <td>5</td>
-                        <td>Alumno a Docente</td>
-                        <td><button type="button" class="btn btn-info" onclick="location.href='reporte.php' ">Reporte de Materia</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Ingles</th>
-                        <td>2021A</td>
-                        <td>5</td>
-                        <td>Docente a Docente</td>
-                        <td><button type="button" class="btn btn-info" onclick="location.href='reporte.php' ">Reporte de Materia</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Matematicas Discretas</th>
-                        <td>2021A</td>
-                        <td>5</td>
-                        <td>Docente a Docente</td>
-                        <td><button type="button" class="btn btn-info" onclick="location.href='reporte.php' ">Reporte de Materia</button></td>
-                    </tr>
+                    <?php
+                     $i=0;
+                     while($i<$contador)
+                    {
+                        echo'
+
+                            <tr>
+                                <th scope="row">'.$materia[$i].'</th>
+                                <td>'.$periodo.'</td>
+                                <td>'.$promedio[$i].'</td>
+                                <td>Alumno a Docente</td>
+                                <form method="post" action="reporte.php">
+                                <input hidden="hidden" type="hidden" id="nombre" name="nombre" value="'.$nombre.'">
+                                <input hidden="hidden" type="hidden" id="periodo" name="periodo" value="'.$periodo.'">
+                                <input hidden="hidden" type="hidden" id="materia" name="materia" value="'.$materia[$i].'">
+                                <input hidden="hidden" type="hidden" id="cuestionario" name="cuestionario" value='.$promedio[$i].'>
+                                <input hidden="hidden" type="hidden" id="carrera" name="carrera" value="'.$carrera.'">
+                                <td><button type="submit" class="btn btn-info">Reporte de Materia</button></td>
+                                </form>     
+                            </tr>
+                        ';    
+                        $i++;
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>

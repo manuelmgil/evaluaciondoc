@@ -41,10 +41,20 @@ function Footer()
 }
 function Datos()
 {
-    //Ejemplos de Variables 
-    $name= "Fernando Araujo Cruz";
-    $carrera= "Ingenieria en Software";
+    $name='Aqui deberia ir el nombre pero algo salio mal, meper d0nas¿';
     $periodo= "2021 A";
+    $carrera= "Ingenieria en Software";
+    $id_cuestionario= 2;
+    //Ejemplos de Variables
+    if ($_SERVER["REQUEST_METHOD"] == "POST") 
+    {
+        // collect value of input field
+        $name = $_POST['nombre'];
+        $periodo= $_POST['periodo'];
+        $carrera= $_POST['carrera'];
+        $id_cuestionario= $_POST['cuestionario'];
+    } 
+    //Ejemplos de Variables 
     $this->SetX(25);
     $this->Cell(0,6,'Nombre:  '.$name,0,1);
     $this->SetX(25);
@@ -64,7 +74,7 @@ function FancyTable($header, $data)
     $this->SetLineWidth(.3);
     $this->SetFont('','B');
     // Cabecera
-    $w = array(35, 35, 45, 40);
+    $w = array(80, 35, 20, 20);
     for($i=0;$i<count($header);$i++)
         $this->Cell($w[$i],7,$header[$i],1,0,'C',true);
     $this->Ln();
@@ -75,15 +85,28 @@ function FancyTable($header, $data)
     // Datos
     
     $fill = false;
-    foreach($data as $row)
+    //Datos que deberian ser de la BDD
+    $materia= array();
+    $materia=['Base de Datos','Programacion Orientada a Objetos','Ingles','Matematicas Discretas'];
+    $periodo='SEP-DIC 2021 ';
+    $id_cuestionario= 1;
+    $promedio=array();
+    $promedio=[5, 5, 5, 5];
+    $estatus=array();
+    $estatus=[5, 5, 5, 5];
+    $contador=sizeof($materia);
+    // aqui termina
+    $i=0;
+    while($i < $contador)
     {
         $this->SetX(25);
-        $this->Cell($w[0],6,$row[0],'LR',0,'L',$fill);
-        $this->Cell($w[1],6,$row[1],'LR',0,'L',$fill);
-        $this->Cell($w[2],6,number_format($row[2]),'LR',0,'R',$fill);
-        $this->Cell($w[3],6,number_format($row[3]),'LR',0,'R',$fill);
+        $this->Cell($w[0],6,$materia[$i],'LR',0,'L',$fill);
+        $this->Cell($w[1],6,$periodo,'LR',0,'L',$fill);
+        $this->Cell($w[2],6,$promedio[$i],'LR',0,'R',$fill);
+        $this->Cell($w[3],6,$estatus[$i],'LR',0,'R',$fill);
         $this->Ln();
         $fill = !$fill;
+        $i++;
     }
     // Línea de cierre
     $this->SetX(25);

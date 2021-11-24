@@ -41,13 +41,23 @@ function Footer()
 }
 function Datos()
 {
-    //Ejemplos de Variables 
-    $name= "Fernando Araujo Cruz";
+    $nombre='Aqui deberia ir el nombre pero algo salio mal, meper d0nas¿';
     $periodo= "2021 A";
-    $materia= "Programacion Orientada a Objetos";
+    $materia= "Aqui va una Materia";
     $id_cuestionario= 2;
+    //Ejemplos de Variables
+    if ($_SERVER["REQUEST_METHOD"] == "POST") 
+    {
+        // collect value of input field
+        $nombre = $_POST['nombre'];
+        $periodo= $_POST['periodo'];
+        $materia= $_POST['materia'];
+        $id_cuestionario= $_POST['cuestionario'];
+    } 
+   
+    
     $this->SetX(25);
-    $this->Cell(0,6,'Nombre:  '.$name,0,1);
+    $this->Cell(0,6,'Nombre:  '.$nombre,0,1);
     $this->SetX(25);
     $this->Cell(0,6,'Periodo:  '.$periodo,0,1);
     $this->SetX(25);
@@ -67,7 +77,7 @@ function FancyTable($header, $data)
     $this->SetLineWidth(.3);
     $this->SetFont('','B');
     // Cabecera
-    $w = array(15, 110, 15, 15);
+    $w = array(25, 90, 20, 20);
     for($i=0;$i<count($header);$i++)
         $this->Cell($w[$i],7,$header[$i],1,0,'C',true);
     $this->Ln();
@@ -75,18 +85,30 @@ function FancyTable($header, $data)
     $this->SetFillColor(224,235,255);
     $this->SetTextColor(0);
     $this->SetFont('');
+    //Datos de la BDD en base al id_cuestionario
+    $periodo='SEP-DIC 2021 ';
+    $preguntas= array();
+    $preguntas=['Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet'];
+    $promedio=array();
+    $promedio=[5,5,5,5,5,5,5,5,5,5];
+    $estatus=array();
+    $estatus=[5,5,5,5,5,5,5,5,5,5];
+    $npreguntas= sizeof($preguntas);
+    //Aqui terminan
     // Datos
-    
+
     $fill = false;
-    foreach($data as $row)
+    $i=0;
+    while($i<$npreguntas)
     {
         $this->SetX(25);
-        $this->Cell($w[0],6,$row[0],'LR',0,'L',$fill);
-        $this->Cell($w[1],6,$row[1],'LR',0,'L',$fill);
-        $this->Cell($w[2],6,number_format($row[2]),'LR',0,'R',$fill);
-        $this->Cell($w[3],6,number_format($row[3]),'LR',0,'R',$fill);
+        $this->Cell($w[0],6,$periodo,'LR',0,'L',$fill);
+        $this->Cell($w[1],6,$preguntas[$i],'LR',0,'L',$fill);
+        $this->Cell($w[2],6,number_format($promedio[$i]),'LR',0,'R',$fill);
+        $this->Cell($w[3],6,number_format($estatus[$i]), 'LR',0,'R',$fill);
         $this->Ln();
         $fill = !$fill;
+        $i++;
     }
     // Línea de cierre
     $this->SetX(25);

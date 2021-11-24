@@ -71,7 +71,7 @@
                          <!-- Variables de prueba  AQUI DEBERIA HACER CONSULTA DEL CUESTIONARIO ACTIVO-->
                         <?php
                             $preguntas= array();
-                            $preguntas=['Pregunta 1', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet', 'Pregunta 1', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet'];
+                            $preguntas=['Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet'];
                             $npreguntas= sizeof($preguntas);
                         ?>
                         

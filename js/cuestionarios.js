@@ -8,7 +8,6 @@ const periodoDos = document.getElementById('p2');
 const periodoTres = document.getElementById('p3');
 const verTodo = document.getElementById('verTodo');
 
-
 //Array
 let cues = [
 

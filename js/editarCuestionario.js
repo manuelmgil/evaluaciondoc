@@ -1,5 +1,5 @@
 //Variables
-
+const contenedor = document.getElementById('cuestionario')
 
 //Variables locales para 
 //Hasta tener BDD
@@ -236,3 +236,142 @@ let cues = [
 
 
 ]
+
+
+//Funciones ------------------
+
+
+//Creación de una pregunta
+const crearPregunta = (count, vpregunta, max) => {
+    //primero creamos las etiquetas para todos los componentes de la pregunta
+    let div = document.createElement('div');
+    let pregunta = document.createElement('p');
+    let botones = document.createElement('div');
+    let eliminar = document.createElement('button');
+
+    //creamos el primer div
+    div.classList.add('pregunta', 'mb-3');
+
+    //agregamos clases y  texto de la pregunta
+    pregunta.appendChild(document.createTextNode(`${count}.- ${vpregunta}`))
+    div.appendChild(pregunta);
+
+    //se agrega el div para los botones, se le agrega su clase primero
+    botones.classList.add('flex');
+    div.appendChild(botones);
+
+    //Se agregan los botones en el div y sus clases
+    eliminar.appendChild(document.createTextNode('Eliminar'))
+    eliminar.classList.add('btn', 'btn-danger', 'automatic');
+    eliminar.setAttribute('id', `del${count}`)
+
+
+
+
+    if (count > 1) {
+        let subir = document.createElement('button');
+        subir.appendChild(document.createTextNode('Subir'))
+        subir.classList.add('btn', 'btn-secondary', 'automatic', 'me-2');
+        subir.setAttribute('id', `up${count}`)
+        botones.appendChild(subir);
+    }
+
+    if (count < max) {
+        let bajar = document.createElement('button');
+        bajar.appendChild(document.createTextNode('Bajar'))
+        bajar.classList.add('btn', 'btn-secondary', 'automatic', 'me-2');
+        bajar.setAttribute('id', `down${count}`)
+        botones.appendChild(bajar);
+    }
+
+    botones.appendChild(eliminar);
+
+    //se agrega todo al contenedor: cuestionario
+    contenedor.appendChild(div)
+
+    //se agregan los eventos individualmente a cada boton
+    eventoEliminar(`del${count}`, count);
+
+    if (count > 1) {
+        eventoSubir(`up${count}`, count);
+    }
+
+    if (count < max) {
+        eventoBajar(`down${count}`, count);
+    }
+}
+
+//Imprimir todas las preguntas
+const llenar = (array) => {
+    contenedor.textContent = '';
+    const max = array.length;
+    array.forEach((element, i) => {
+        crearPregunta(i + 1, element, max)
+    })
+}
+
+
+//funcion para eliminar de la variable estatica
+const eliminarPrueba = (id) => {
+    cues[0].q.forEach((e, i, ob) => {
+        if (i === id - 1) {
+            ob.splice(i, 1)
+        }
+    })
+
+    llenar(cues[0].q)
+}
+
+//funcion para subir la pregunta
+const intercambiar = (indexA, indexB) => {
+    const temp = cues[0].q[indexB];
+    cues[0].q[indexB] = cues[0].q[indexA];
+    cues[0].q[indexA] = temp
+
+    llenar(cues[0].q)
+
+}
+
+//eventListeners
+
+//Eliminar una pregunta
+const eventoEliminar = (id, num) => {
+    const objeto = document.getElementById(id);
+    objeto.addEventListener('click', () => {
+
+        //Se retira todo el contenido del div padre con la pregunta y los botones
+        objeto.parentElement.parentElement.parentElement.removeChild(objeto.parentElement.parentElement);
+
+        //funcion para eliminar de la BDD
+        //PROVISIONAL PARA PRUEBAS
+        eliminarPrueba(num);
+        //FIN PROVISIONAL
+    })
+}
+
+//subir una pregunta PROVISIONAL PARA ARRAY
+const eventoSubir = (id, num) => {
+    const objeto = document.getElementById(id);
+    objeto.addEventListener('click', () => {
+
+        intercambiar(num - 1, num - 2);
+    })
+
+}
+
+//bajar una pregunta PROVISIONAL PARA ARRAY
+const eventoBajar = (id, num) => {
+    const objeto = document.getElementById(id);
+    objeto.addEventListener('click', () => {
+
+        intercambiar(num - 1, num);
+    })
+
+}
+
+
+
+
+
+//primer llenado
+llenar(cues[0].q);

@@ -1,6 +1,9 @@
+//variables
 const boton = document.querySelectorAll("input")[1];
 const valor = document.querySelectorAll("input")[0];
 let session = false
+
+//variables estaticas para pruebass
 const users = [
     {
         tipoUsuario: "Administrador",
@@ -14,6 +17,11 @@ const users = [
     }
 ]
 
+
+//funciones
+
+
+//funcion para iniciar sesión
 const ingresar = () => {
     const val = valor.value;
     users.forEach((data) => {
@@ -28,8 +36,18 @@ const ingresar = () => {
         }
 
 
-    })
 
+    })
+    valor.value = '';
 }
 
+//funcion para iniciar sesión presionando Enter
+const ingresarInput = (e) => {
+    if (e.keyCode === 13) {
+        ingresar();
+    }
+}
+
+
 boton.addEventListener("click", ingresar);
+valor.addEventListener('keyup', ingresarInput);

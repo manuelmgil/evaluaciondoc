@@ -1,11 +1,25 @@
 /* General */
 A:link {text-decoration: none }
-body{
-    height: 100%;
-    width: 100%;
-    font-family: 'Roboto', Courier, monospace;
-
+.titulo{
+    color: #323F80;
+    font-family: 'Montserrat';
+    font-size: 1.8em;
+}   
+.contenedor{
+    background-color: white;
+    width: 95%;
+    height:auto;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 37px;
+    padding: 35px 30px;
+    display: flex;
 }
+body{
+    background: #E0E7EC;
+    font-family: 'Roboto', Courier, monospace;
+}
+
 /* nav */
 .uninombre{
     margin-left: 18px;
@@ -103,10 +117,9 @@ div.infoperiodo{
     gap:30px;
     grid-template-columns:  repeat(auto-fill, minmax(250px, 1fr));
 }
-.row{
-    
-}
+
 .tarjeta{
+    text-decoration:none;
     border-radius: 27px;
     padding: 12px;
 color: white;
@@ -118,11 +131,13 @@ color: white;
     background-color: #F9AA43;
 }
 .tarjeta.incompleto{
-    background-color: #EFDC60;
-    color: white;
+    background-color: #F9AA43;
+    
     height: auto;
     text-decoration:none;
     margin-bottom: 0;
+    font-weight: 120;
+    color: white;
     
 }
 .tarjeta.completo{
@@ -158,4 +173,42 @@ color: white;
 div .separar p{
     font-size: .8em;
 }
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+  }
+  .eleccionbtn {
+    text-align: center;
+    background-color: #8A3B3B;
+    color:white;
+    width: 200px;
+    height: 95px;
+    padding: 25px 9px;
+    border-radius: 47px;
+    margin-right: auto;
+    margin-left: auto;
+    /* align-self: center; */
+}
+.eleccionbtn p {
+    text-decoration:none;
+    margin-bottom: 0;
+}
+.eleccion > p{
+    font-size: .9em;
+    color: #7E7878;
+    font-style: italic;
+}
 
+div.eleccion{
+    /* justify-items: center; */
+    width: 400px;
+    margin: 0;
+    text-align: center;
+  
+}
+
+div.eleccion a {
+    text-decoration: none;
+    
+}

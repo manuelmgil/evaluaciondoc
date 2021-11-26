@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/alumno.css">
     <link rel="stylesheet" href="CSS/cuestionario.css">
+    <link rel="stylesheet" href="CSS/cuesal.css">
     <title>Evaluación docente</title>
 </head>
 <?php
@@ -19,6 +19,7 @@
     {
         $maestro= 'Maestro';
     }
+    
 
 ?>
 
@@ -89,11 +90,11 @@
                                         <td>'.$preguntas[$cont].'</td>
                                         <td>
                                             <div class="fijo">
-                                                <input type="radio" name="q'.$cont.'" value="1">
-                                                <input type="radio" name="q'.$cont.'" value="2">
-                                                <input type="radio" name="q'.$cont.'" value="3">
-                                                <input type="radio" name="q'.$cont.'" value="4">
-                                                <input type="radio" name="q'.$cont.'" value="5">
+                                                <input type="radio" required="required" name="q'.$cont.'" value="1">
+                                                <input type="radio" required="required" name="q'.$cont.'" value="2">
+                                                <input type="radio" required="required" name="q'.$cont.'" value="3">
+                                                <input type="radio" required="required" name="q'.$cont.'" value="4">
+                                                <input type="radio" required="required" name="q'.$cont.'" value="5">
                                             </div>
                                         </td>
                                     </tr>
@@ -106,7 +107,7 @@
                         
                     </tbody>
                 </table>
-                <input type="submit">
+                <button type="submit" class="btn btn-primary">Enviar Datos</button>  
             </form>
                  <!-- Envio de datos por POST de Prueba  -->
                     <?php
@@ -121,16 +122,22 @@
                         }
                         if(empty($prueba[0] or $prueba[1] or $prueba[2] or  $prueba[3] or $prueba[4] ))
                         {
-                            echo"Sin datos";
-
+                            echo'';
                         }
                         else
                         {
                             $i=0;
+                            //Aqui debe ir un Insert
                             while($i<$npreguntas)
                             {
+
                                 echo $prueba[$i];
                                 $i++;
+                                echo'<script type="text/javascript">
+                                    alert("Datos Guardados correctamente");
+                                    window.location.href="alumnos.php";
+                                    </script>'
+                                ;
                             }
 
                         }

@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/alumno.css">
-    <link rel="stylesheet" href="CSS/administrador.css">
     <title>Evaluación docente</title>
 </head>
 
@@ -40,24 +39,22 @@
     $materia = array();
     $materia = ['POO', 'Algoritmos', 'Base de Datos', 'Ing Requerimientos', 'POO', 'Algoritmos', 'Base de Datos', 'Ing Requerimientos'];
     $estatus = array();
-    $estatus = ['incompleto', 'incompleto', 'incompleto', 'incompleto', 'incompleto', 'incompleto', 'incompleto', 'incompleto'];
+    $estatus = ['completo', 'incompleto', 'incompleto', 'incompleto', 'incompleto', 'incompleto', 'incompleto', 'incompleto'];
     $carrera = 'Ing. Software';
     $periodo = 'SEP-DIC 2021';
     ?>
     <!-- Fin variables de prueba -->
     <div class="contenedor">
         <?php
-        $tamaño = 3;
+        $tamaño = 7;
         $cont = 0;
-        if ($tamaño <= 4) {
-
-            echo '<div class="row">';
-            while ($cont < 4 and $cont <= $tamaño) {
+            echo '<div class="wrapper">';
+            while ($cont <= $tamaño) {
                 if ($estatus[$cont] == 'completo') {
                     echo
                     '
                 
-                    <div class="col">
+                    
                         <!-- tarjeta -->
                         <div class="tarjeta ' . $estatus[$cont] . '">
                             
@@ -66,92 +63,36 @@
                                 <p class="Materia">' . $materia[$cont] . '</p>
                                 <div class="separar">
                                     <p class="Carrera">'.$carrera.'</p>
-                                    <p>/</p>
                                     <p class="Periodo pushperiodo">Periodo SEP-DIC</p>
                                 </div>
                         </div>
                         <!-- tarjeta fin -->
-                    </div>
+                    
                     ';
                 } else {
                     echo
                     '
-                    
-                        <div class="col">
                             <!-- tarjeta -->
                             <div class="tarjeta ' . $estatus[$cont] . '">
-                                <a href="./cuestionario.php?n='.$maestro[$cont].'&mat='.$materia[$cont].'&c='.$carrera.'">
+                                <a style="text-decoration:none;" href="./cuestionario.php?n='.$maestro[$cont].'&mat='.$materia[$cont].'&c='.$carrera.'">
                                     <p class="Estatus">' . $estatus[$cont] . '</p>
                                     <p class="Nombre">' . $maestro[$cont] . '</p>
                                     <p class="Materia">'.$materia[$cont].'</p>
                                     
                                     <div class="separar">
                                         <p class="Carrera">'.$carrera.'</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- tarjeta fin -->
-                        </div>
-                        ';
-                }
-
-                $cont++;
-            }
-            echo '</div>';
-        }
-        if ($tamaño > 4 and $tamaño <= 8) {
-
-            echo '<br> <div class="row">';
-            while ($cont < 8 and $cont <= $tamaño) {
-                if ($estatus[$cont] == 'completo') {
-                    echo
-                    '
-                
-                    <div class="col">
-                        <!-- tarjeta -->
-                        <div class="tarjeta ' . $estatus[$cont] . '">
-                            
-                                <p class="Estatus">' . $estatus[$cont] . '</p>
-                                <p class="Nombre">' . $maestro[$cont] . '</p>
-                                <p class="Materia">' . $materia[$cont] . '</p>
-                                <div class="separar">
-                                    <p class="Carrera">Ing. en Software</p>
-                                    <p>/</p>
                                     <p class="Periodo pushperiodo">Periodo SEP-DIC</p>
-                                </div>
-                        </div>
-                        <!-- tarjeta fin -->
-                    </div>
-                    ';
-                } else {
-                    echo
-                    '
-                    
-                        <div class="col">
-                            <!-- tarjeta -->
-                            <div class="tarjeta ' . $estatus[$cont] . '">
-                                <a href="./cuestionario.php">
-                                    <p class="Estatus">' . $estatus[$cont] . '</p>
-                                    <p class="Nombre">' . $maestro[$cont] . '</p>
-                                    <p class="Materia">' . $materia[$cont] . '</p>
-                                    
-                                    <div class="separar">
-                                        <p class="Carrera">Ing. en Software</p>
-                                        <p>/</p>
-                                        <p class="Periodo pushperiodo">Periodo SEP-DIC</p>
                                     </div>
                                 </a>
                             </div>
                             <!-- tarjeta fin -->
-                        </div>
                         ';
                 }
 
                 $cont++;
             }
             echo '</div>';
-        }
-        ?>
+    ?>
 
 
 

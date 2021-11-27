@@ -26,7 +26,9 @@
                     } else {
                     }
                 }
-               
+                $periodos= array();
+                $periodos=['ENE-ABR 2021', 'MAY-AGO 2021', 'SEP-DIC 2021'];
+                $contper=sizeof($periodos);
                 $nombre= 'Fernando Araujo Cruz';
                 $materia= array();
                 $materia=['Base de Datos','Programacion Orientada a Objetos','Ingles','Matematicas Discretas'];
@@ -69,10 +71,15 @@
                                 <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
                                     <div class="input-group">
                                         <select class="form-select form-select-sm mb-0" aria-label=".form-select-lg example" name="periodo">
-                                        <option selected>SEP-DIC 2021</option>
-                                        <option value="2021 A">2021 A</option>
-                                        <option value="2021 B">2021 B</option>
-                                        <option value="2022 A">2022 A</option>
+                                        <option selected><?php echo $periodo;?></option>
+                                        <?php
+                                        $i=0;
+                                        while($i<$contper)
+                                        {
+                                            echo '<option value="'.$periodos[$i].'">'.$periodos[$i].'</option>';
+                                            $i++;
+                                        }
+                                        ?>
                                         </select>
                                     
                                      <button type="submit" class="btn btn-success">Buscar</button> 

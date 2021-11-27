@@ -12,9 +12,11 @@
     <title>Evaluación docente</title>
 </head>
 <?php
+    
     $maestro= $_GET['n'];
     $materia= $_GET['mat'];
     $carrera= $_GET['c'];
+    $periodo=$_GET['p'];
     if(empty($maestro))
     {
         $maestro= 'Maestro';
@@ -41,7 +43,7 @@
     <div class="infoperiodo">
         <p>Sistema de Evaluación Docente</p>
         <p class="pushperiodo">
-            <!-- Periodo en consulta--> Periodo SEP-DIC
+            <!-- Periodo en consulta--> <?php echo $periodo; ?>
         </p>
     </div>
     <div class="contenido">

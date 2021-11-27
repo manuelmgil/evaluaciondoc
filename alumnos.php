@@ -11,29 +11,8 @@
 </head>
 
 <body>
-    <nav>
-        <a href="administrador.php"><img src="img/logo.jpg" alt="logo">
-        </a>
-        <p class="uninombre">Universidad Politécnica de Quintana Roo</p>
-        <div class="pushnav">
-            <p>
-                <!-- Nombre en consulta-->Manuel Iván Mukul Gil
-            </p>
-            <a href="#">
-                <p class="sesionnav">Cerrar Sesión</p>
-            </a>
-        </div>
-    </nav>
-    <!-- Info del periodo -->
-    <div class="infoperiodo">
-        <p>Sistema de Evaluación Docente</p>
-        <p class="pushperiodo">
-            <!-- Periodo en consulta--> Periodo SEP-DIC
-        </p>
-    </div>
-    <p class="textosuave">Seleccione un cuestionario para empezar a evaluar</p>
-    <!-- Variables de prueba, esto deberia ser recibido por una consulta a la BDD -->
-    <?php
+        <!-- Variables de prueba, esto deberia ser recibido por una consulta a la BDD -->
+        <?php
     $maestro = array();
     $maestro = ['Mariano Xiu Chan', 'Carlos Tamay', 'Manuel Flores', 'Christian Guadalupe', 'Mariano Xiu Chan', 'Carlos Tamay', 'Manuel Flores', 'Christian Guadalupe'];
     $materia = array();
@@ -44,6 +23,27 @@
     $periodo = 'SEP-DIC 2021';
     ?>
     <!-- Fin variables de prueba -->
+    <nav>
+        <a href="administrador.php"><img src="img/logo.jpg" alt="logo">
+        </a>
+        <p class="uninombre">Universidad Politécnica de Quintana Roo</p>
+        <div class="pushnav">
+            <p>
+                <!-- Nombre en consulta-->Manuel Iván Mukul Gil
+            </p>
+            <a href="index.html">
+                <p class="sesionnav">Cerrar Sesión</p>
+            </a>
+        </div>
+    </nav>
+    <!-- Info del periodo -->
+    <div class="infoperiodo">
+        <p>Sistema de Evaluación Docente</p>
+        <p class="pushperiodo">
+            <!-- Periodo en consulta--> Periodo <?php echo $periodo; ?>
+        </p>
+    </div>
+    <p class="textosuave">Seleccione un cuestionario para empezar a evaluar</p>
     <div class="contenedor">
         <?php
         $tamaño = 7;
@@ -63,7 +63,7 @@
                                 <p class="Materia">' . $materia[$cont] . '</p>
                                 <div class="separar">
                                     <p class="Carrera">'.$carrera.'</p>
-                                    <p class="Periodo pushperiodo">Periodo SEP-DIC</p>
+                                    <p class="Periodo pushperiodo" name= "periodo">'.$periodo.'</p>
                                 </div>
                         </div>
                         <!-- tarjeta fin -->
@@ -74,14 +74,14 @@
                     '
                             <!-- tarjeta -->
                             <div class="tarjeta ' . $estatus[$cont] . '">
-                                <a style="text-decoration:none;" href="./cuestionario.php?n='.$maestro[$cont].'&mat='.$materia[$cont].'&c='.$carrera.'">
+                                <a style="text-decoration:none;" href="./cuestionario.php?n='.$maestro[$cont].'&mat='.$materia[$cont].'&c='.$carrera.'&p='.$periodo.'">
                                     <p class="Estatus">' . $estatus[$cont] . '</p>
                                     <p class="Nombre">' . $maestro[$cont] . '</p>
                                     <p class="Materia">'.$materia[$cont].'</p>
                                     
                                     <div class="separar">
                                         <p class="Carrera">'.$carrera.'</p>
-                                    <p class="Periodo pushperiodo">Periodo SEP-DIC</p>
+                                    <p class="Periodo pushperiodo" name="periodo">'.$periodo.'</p>
                                     </div>
                                 </a>
                             </div>

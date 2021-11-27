@@ -15,10 +15,21 @@
 <body>
             <!-- Aqui va el codigo que se obtiene de la base de datos, si tuviera una -->
             <?php
+                $periodo= "SEP-DIC 2021";
+                if ($_SERVER["REQUEST_METHOD"] == "POST")
+                 {
+                    // collect value of input field
+                    $periodo = $_POST['periodo'];
+                    if ($periodo=="") {
+                    //Aqui deberia ir la consulta filtrando por periodos de la BDD
+                        $periodo='SEP-DIC 2021 ';
+                    } else {
+                    }
+                }
+               
                 $nombre= 'Fernando Araujo Cruz';
                 $materia= array();
                 $materia=['Base de Datos','Programacion Orientada a Objetos','Ingles','Matematicas Discretas'];
-                $periodo='SEP-DIC 2021 ';
                 $id_cuestionario= 1;
                 $promedio=array();
                 $promedio=[5, 5, 5, 5];
@@ -44,7 +55,7 @@
     <div class="infoperiodo">
         <p>Sistema de Evaluación Docente</p>
         <p class="pushperiodo">
-            <!-- Periodo en consulta--> Periodo SEP-DIC
+            <!-- Periodo en consulta--> <?php echo $periodo; ?>
         </p>
     </div>
     <div class="contenido">
@@ -55,9 +66,17 @@
                         <th class="textodatos" scope="col">Promedio de Cursos</th>
                         <th scope="col">
                             <div class="search-container">
-                                <form action="/action_page.php">
-                                    <input type="text" placeholder="Buscar.." name="search">
-                                    <button type="button" class="btn btn-success">Buscar</button>
+                                <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+                                    <div class="input-group">
+                                        <select class="form-select form-select-sm mb-0" aria-label=".form-select-lg example" name="periodo">
+                                        <option selected>SEP-DIC 2021</option>
+                                        <option value="2021 A">2021 A</option>
+                                        <option value="2021 B">2021 B</option>
+                                        <option value="2022 A">2022 A</option>
+                                        </select>
+                                    
+                                     <button type="submit" class="btn btn-success">Buscar</button> 
+                                     </div>
                                 </form>
                             </div>
                         </th>

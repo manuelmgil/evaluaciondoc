@@ -70,8 +70,8 @@
                             <div class="search-container">
                                 <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
                                     <div class="input-group">
-                                        <select class="form-select form-select-sm mb-0" aria-label=".form-select-lg example" name="periodo">
-                                        <option selected><?php echo $periodo;?></option>
+                                        <select class="form-select form-select-sm" name="periodo">
+                                        <option selected>Periodo..</option>
                                         <?php
                                         $i=0;
                                         while($i<$contper)
@@ -93,7 +93,7 @@
                                 <input hidden="hidden" type="hidden" id="periodo" name="periodo" value="<?php echo $periodo ?>">
                                 <input hidden="hidden" type="hidden" id="cuestionario" name="cuestionario" value= <?php echo $id_cuestionario ?>>
                                 <input hidden="hidden" type="hidden" id="carrera" name="carrera" value="<?php echo $carrera ?>">
-                            <button type="submit" class="btn btn-primary"  >Obtener Reporte General</button>
+                            <button type="submit" class="btn btn-primary"  >Reporte General</button>
                             </form>
                         </th>
                     </tr>
